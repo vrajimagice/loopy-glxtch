@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In - Loopy</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <div class="auth-overlay">
+    <div class="auth-backdrop"></div>
+    <section class="auth-panel">
+      <div class="auth-side">
+        <a href="../landing/index.html" class="brand brand-light">
+          <span class="loopy-wordmark"><b>L</b><i><span></span><span></span></i><b>py</b></span>
+        </a>
+        <div>
+          <p class="eyebrow light">Your next chapter</p>
+          <h2>Let's turn your ambition into a plan.</h2>
+          <p>One profile. Better guidance. Opportunities chosen for your potential.</p>
+        </div>
+        <div class="auth-quote">"The clearest way to predict your future is to start building it."</div>
+      </div>
+      <div class="auth-form-wrap">
+        <a href="../landing/index.html" class="icon-button close-button" aria-label="Close">
+          <span id="close-icon"></span>
+        </a>
+        <form id="login-form">
+          <p class="eyebrow">Welcome back</p>
+          <h2>Continue your journey.</h2>
+          <p class="form-intro">Log in to see your matches, saved opportunities and next steps.</p>
+          <div id="login-error" style="display: none; padding: 12px; margin-bottom: 15px; background: #fee; border: 1px solid #fcc; border-radius: 2px; color: #c33; font-size: 12px;"></div>
+          <label>Email<input required type="email" placeholder="Your email" autofocus id="login-email"></label>
+          <label>Password<input required type="password" placeholder="Your password" id="login-password"></label>
+          <div class="form-meta">
+            <label class="checkbox"><input type="checkbox" id="remember-me"> Remember me</label>
+            <button type="button" id="forgot-password-btn">Forgot password?</button>
+          </div>
+          <button class="primary-button full" type="submit">Log in <span id="arrow-icon"></span></button>
+          <p class="switch">New to Loopy? <a href="signup.html">Create an account</a></p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script src="../assets/js/icons.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script>
+    document.getElementById('close-icon').innerHTML = icon('close', 20);
+    document.getElementById('arrow-icon').innerHTML = icon('arrow', 18);
+
+    // Handle login
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+      const errorEl = document.getElementById('login-error');
+
+      const result = AUTH.login(email, password);
+
+      if (result.success) {
+        window.location.href = 'index.html';
+      } else {
+        errorEl.textContent = result.error;
+        errorEl.style.display = 'block';
+      }
+    });
+
+    // Forgot password handler
+    document.getElementById('forgot-password-btn').addEventListener('click', function() {
+      const email = prompt('Enter your email address:');
+      if (email) {
+        alert('Password reset instructions have been sent to ' + email + '\n\n(Demo mode: Check your account in localStorage)');
+      }
+    });
+  </script>
+</body>
+</html>

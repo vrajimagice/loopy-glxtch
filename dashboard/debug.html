@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEBUG LA AUTH</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: monospace; font-size: 13px; padding: 20px; background: #1a1a1a; color: #0f0; }
+    h1 { color: #ff0; margin-bottom: 20px; }
+    h2 { color: #0ff; margin: 20px 0 10px; font-size: 14px; }
+    pre { background: #000; padding: 15px; overflow: auto; border: 1px solid #333; margin-bottom: 20px; }
+    button { padding: 8px 15px; margin: 5px 5px 5px 0; background: #333; color: #0f0; border: 1px solid #0f0; cursor: pointer; font-family: monospace; }
+    button:hover { background: #0f0; color: #000; }
+    button.danger { border-color: #f00; color: #f00; }
+    button.danger:hover { background: #f00; color: #fff; }
+    input { padding: 8px; margin: 5px; background: #000; color: #0f0; border: 1px solid #333; font-family: monospace; }
+    .result { margin: 10px 0; padding: 10px; background: #000; border-left: 3px solid #0f0; }
+    .error { border-left-color: #f00; color: #f00; }
+    .success { border-left-color: #0f0; color: #0f0; }
+    a { color: #0ff; margin-right: 15px; }
+  </style>
+</head>
+<body>
+  <h1>DEBUG LA AUTH</h1>
+
+  <h2>localStorage.getItem('loopy_current_user')</h2>
+  <pre id="current-email">null</pre>
+
+  <h2>localStorage.getItem('loopy_users')</h2>
+  <pre id="all-users">{}</pre>
+
+  <h2>ACTIONS</h2>
+  <button onclick="refresh()">REFRESH</button>
+  <button class="danger" onclick="wipe()">WIPE ALL DATA</button>
+  <button onclick="testReg()">CREATE test@test.com</button>
+
+  <h2>MANUAL REGISTER</h2>
+  <input type="text" id="reg-email" placeholder="email">
+  <input type="password" id="reg-pass" placeholder="password">
+  <input type="text" id="reg-first" placeholder="first name">
+  <input type="text" id="reg-last" placeholder="last name">
+  <button onclick="manualReg()">REGISTER</button>
+  <div id="reg-result"></div>
+
+  <h2>MANUAL LOGIN</h2>
+  <input type="text" id="login-email" placeholder="email">
+  <input type="password" id="login-pass" placeholder="password">
+  <button onclick="manualLogin()">LOGIN</button>
+  <div id="login-result"></div>
+
+  <h2>NAV</h2>
+  <a href="../landing/index.html">Landing</a>
+  <a href="signup.html">Signup</a>
+  <a href="login.html">Login</a>
+  <a href="index.html">Dashboard</a>
+
+  <script src="../assets/js/auth.js"></script>
+  <script>
+    function refresh() {
+      const email = localStorage.getItem('loopy_current_user');
+      const users = localStorage.getItem('loopy_users');
+
+      document.getElementById('current-email').textContent = email || 'null';
+      document.getElementById('all-users').textContent = users || '{}';
+
+      console.log('REFRESH');
+      console.log('Current:', email);
+      console.log('Users:', users);
+    }
+
+    function wipe() {
+      if (confirm('WIPE ALL DATA?')) {
+        localStorage.removeItem('loopy_users');
+        localStorage.removeItem('loopy_current_user');
+        console.log('WIPED');
+        refresh();
+      }
+    }
+
+    function testReg() {
+      const result = AUTH.register('test@test.com', 'test123', 'Test', 'User');
+      console.log('TEST REG RESULT:', result);
+      alert(result.success ? 'SUCCESS' : 'FAILED: ' + result.error);
+      refresh();
+    }
+
+    function manualReg() {
+      const email = document.getElementById('reg-email').value;
+      const pass = document.getElementById('reg-pass').value;
+      const first = document.getElementById('reg-first').value;
+      const last = document.getElementById('reg-last').value;
+
+      console.log('MANUAL REG:', { email, pass, first, last });
+
+      const result = AUTH.register(email, pass, first, last);
+
+      const div = document.getElementById('reg-result');
+      div.className = result.success ? 'result success' : 'result error';
+      div.textContent = result.success ? 'SUCCESS - REGISTERED' : 'FAILED: ' + result.error;
+
+      console.log('REG RESULT:', result);
+      refresh();
+    }
+
+    function manualLogin() {
+      const email = document.getElementById('login-email').value;
+      const pass = document.getElementById('login-pass').value;
+
+      console.log('MANUAL LOGIN:', { email, pass });
+
+      const result = AUTH.login(email, pass);
+
+      const div = document.getElementById('login-result');
+      div.className = result.success ? 'result success' : 'result error';
+      div.textContent = result.success ? 'SUCCESS - LOGGED IN' : 'FAILED: ' + result.error;
+
+      console.log('LOGIN RESULT:', result);
+      refresh();
+    }
+
+    refresh();
+  </script>
+</body>
+</html>
