@@ -1,4 +1,3 @@
-// Multi-step signup form with authentication
 let currentStep = 1;
 const totalSteps = 5;
 const signupData = {};
@@ -17,7 +16,6 @@ function updateProgress() {
 }
 
 function nextStep() {
-  // Collect data from current step
   collectStepData(currentStep);
 
   if (currentStep < totalSteps) {
@@ -25,7 +23,6 @@ function nextStep() {
     updateProgress();
     renderStep();
   } else {
-    // Final step - register user
     registerUser();
   }
 }
@@ -71,7 +68,6 @@ function collectStepData(step) {
 }
 
 function registerUser() {
-  // Validate required fields
   if (!signupData.email || !signupData.password || !signupData.firstName || !signupData.lastName) {
     alert('Please complete all required fields in step 1.');
     currentStep = 1;
@@ -83,11 +79,9 @@ function registerUser() {
   const result = AUTH.register(signupData.email, signupData.password, signupData.firstName, signupData.lastName);
 
   if (result.success) {
-    // Store additional profile data
     AUTH.login(signupData.email, signupData.password);
     AUTH.updateUser({ profileData: signupData });
 
-    // Redirect to dashboard
     window.location.href = 'index.html';
   } else {
     alert(result.error);
@@ -102,17 +96,14 @@ function renderStep() {
   const stepContent = getStepContent(currentStep);
   form.innerHTML = stepContent;
 
-  // Re-inject arrow icons
   document.querySelectorAll('[id^="arrow-icon"]').forEach(function(el) {
     el.innerHTML = icon('arrow', 18);
   });
 
-  // Re-inject check icons
   document.querySelectorAll('[id^="check-icon"]').forEach(function(el) {
     el.innerHTML = icon('check', 15);
   });
 
-  // Restore selected values
   restoreStepData(currentStep);
 }
 
@@ -276,7 +267,6 @@ function getStepContent(step) {
   return steps[step] || steps[1];
 }
 
-// Handle button selections
 document.addEventListener('click', function(e) {
   if (e.target.classList.contains('interest-btn') || e.target.closest('.interest-btn')) {
     const btn = e.target.classList.contains('interest-btn') ? e.target : e.target.closest('.interest-btn');

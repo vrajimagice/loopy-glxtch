@@ -21,19 +21,5 @@ function icon(name, size = 20) {
 
 function loopy(small = false) {
   const className = small ? 'loopy small' : 'loopy';
-  return `<svg class="${className}" viewBox="0 0 100 100" role="img" aria-label="Loopy, your cute path-finding mascot">
-    <circle cx="50" cy="51" r="42" fill="#f6d968" stroke="#071a30" stroke-width="3.5"/>
-    <ellipse cx="34" cy="42" rx="11" ry="15" fill="white" stroke="#071a30" stroke-width="3" transform="rotate(-7 34 42)"/>
-    <ellipse cx="67" cy="40" rx="12" ry="16" fill="white" stroke="#071a30" stroke-width="3" transform="rotate(8 67 40)"/>
-    <circle cx="38" cy="45" r="5" fill="#071a30"/>
-    <circle cx="62" cy="44" r="5" fill="#071a30"/>
-    <circle cx="39.5" cy="43" r="1.5" fill="white"/>
-    <circle cx="63.5" cy="42" r="1.5" fill="white"/>
-    <ellipse cx="20" cy="60" rx="7" ry="4" fill="#efa7a7" opacity=".72"/>
-    <ellipse cx="81" cy="60" rx="7" ry="4" fill="#efa7a7" opacity=".72"/>
-    <path d="M30 64c6 18 31 22 42-2-13 7-29 8-42 2Z" fill="white" stroke="#071a30" stroke-width="3" stroke-linejoin="round"/>
-    <path d="M45 76c7-4 13-3 17 1" fill="none" stroke="#efa7a7" stroke-width="4" stroke-linecap="round"/>
-    <path d="M49 55c-3 2-3 5 1 6" fill="none" stroke="#071a30" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M15 25c-7-5-7-11-3-15M83 21c7-6 7-11 4-16" fill="none" stroke="#071a30" stroke-width="3" stroke-linecap="round"/>
-  </svg>`;
+  return `<img src="../assets/images/loopy.png" class="${className}" alt="Loopy mascot">`;
 }

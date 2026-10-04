@@ -29,6 +29,7 @@ h1, h2 { letter-spacing: -.045em; }
 h2 { font-size: clamp(32px, 4vw, 51px); line-height: 1.06; }
 h1 em, h2 em { font-family: var(--serif); font-weight: 500; }
 .brand { display: flex; align-items: center; gap: 10px; border: 0; background: none; padding: 0; font-weight: 700; cursor: pointer; letter-spacing: -.02em; text-decoration: none; color: inherit; }
+.brand-logo { height: 45px; width: auto; display: block; }
 .loopy-wordmark { display: flex; align-items: center; gap: 1px; font-size: 22px; letter-spacing: -.05em; }
 .loopy-wordmark b { font-weight: 700; }
 .loopy-wordmark i { display: flex; align-items: center; gap: 2px; margin: 0 1px; font-style: normal; }
@@ -49,7 +50,6 @@ h1 em, h2 em { font-family: var(--serif); font-weight: 500; }
 .silver-button { background: var(--silver-light); color: var(--navy); }
 .silver-button:hover { background: var(--white); transform: translateY(-2px); }
 
-/* Landing */
 .landing { overflow: hidden; }
 .landing-nav { height: 86px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
 .landing-links { display: flex; align-items: center; gap: 29px; }
@@ -89,7 +89,6 @@ h1 em, h2 em { font-family: var(--serif); font-weight: 500; }
 .landing-cta { margin-block: 95px; padding: 56px 64px; display: flex; justify-content: space-between; align-items: center; background: var(--navy); color: white; }
 .landing-cta h2 { margin-bottom: 0; font-size: 42px; }
 
-/* Auth */
 .auth-overlay { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 28px; }
 .auth-backdrop { position: absolute; inset: 0; width: 100%; border: 0; background: rgba(4,15,28,.72); backdrop-filter: blur(7px); }
 .auth-panel { position: relative; width: min(1050px, 100%); max-height: calc(100vh - 56px); display: grid; grid-template-columns: .83fr 1.17fr; overflow: auto; background: var(--paper); box-shadow: 0 30px 100px rgba(0,0,0,.35); }
@@ -131,7 +130,6 @@ input::placeholder { color: #a7afb7; }
 .analysis-note span { display: grid; gap: 3px; font-size: 10px; line-height: 1.5; }
 .analysis-note strong { color: var(--navy); font-size: 11px; }
 
-/* Dashboard */
 .dashboard { background: var(--paper); }
 .dash-nav { height: 84px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
 .dash-links { display: flex; gap: 34px; }
@@ -221,11 +219,9 @@ footer p, footer span { margin: 0; color: #8fa0af; font-size: 10px; }
 .toast { position: fixed; z-index: 100; top: 24px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 9px; padding: 13px 18px; background: var(--navy); color: white; box-shadow: 0 10px 35px rgba(0,0,0,.2); font-size: 11px; animation: toast-in .25s ease-out; }
 @keyframes toast-in { from { opacity: 0; transform: translate(-50%, -10px); } }
 
-/* Loopy mascot */
-.loopy { display: block; width: 80px; height: 80px; flex: none; filter: drop-shadow(0 5px 5px rgba(7,26,48,.1)); }
-.loopy.small { width: 42px; height: 42px; }
+.loopy { display: block; width: 80px; height: 80px; flex: none; filter: drop-shadow(0 5px 5px rgba(7,26,48,.1)); object-fit: contain; }
+.loopy.small { width: 50px; height: 50px; }
 
-/* Modal styles */
 .modal-layer { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 28px; }
 .modal-backdrop { position: absolute; inset: 0; width: 100%; border: 0; background: rgba(4,15,28,.76); backdrop-filter: blur(8px); cursor: pointer; }
 .info-modal { position: relative; width: min(620px, 100%); max-height: calc(100vh - 56px); overflow: auto; padding: 54px; background: var(--paper); box-shadow: 0 28px 100px rgba(0,0,0,.35); }
@@ -273,7 +269,6 @@ footer p, footer span { margin: 0; color: #8fa0af; font-size: 10px; }
 .empty-saved h3 { margin: 18px 0 7px; }
 .empty-saved p { color: var(--muted); font-size: 11px; }
 
-/* Responsive */
 @media (max-width: 950px) {
   .landing-links > a:nth-child(-n+2), .landing-links > button:nth-child(-n+2) { display: none; }
   .hero { gap: 38px; grid-template-columns: 1fr 1fr; }
@@ -329,5 +324,4 @@ footer p, footer span { margin: 0; color: #8fa0af; font-size: 10px; }
   .saved-grid { grid-template-columns: 1fr; }
 }
 
-/* Hidden helper */
 .hidden { display: none !important; }
