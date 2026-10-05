@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - Loopy</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <main class="dashboard">
+    <nav class="dash-nav shell">
+      <a href="../landing/index.html" class="brand">
+        <img src="../assets/images/loopy.png" alt="Loopy" class="brand-logo">
+      </a>
+      <div class="dash-links" id="dash-links">
+        <a href="index.html">Overview</a>
+        <a href="counselors.html">Counselors</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a href="universities.html">Universities</a>
+        <button id="saved-btn">Saved <span class="nav-count">0</span></button>
+      </div>
+      <div class="nav-profile">
+        <button class="icon-button mobile-menu" id="mobile-menu" aria-label="Menu"><span id="menu-icon"></span></button>
+        <button class="profile-button">
+          <span>ST</span>
+          <small>Student<br><b>View account</b></small>
+        </button>
+      </div>
+    </nav>
+
+    <section class="dash-hero shell">
+      <div class="welcome">
+        <p class="eyebrow">Guidance that fits your needs</p>
+        <h1>Choose your plan.</h1>
+        <p>Talk to someone who has recently been where you want to go.</p>
+      </div>
+    </section>
+
+    <section class="pricing-section shell">
+      <div class="pricing-toggle">
+        <button class="toggle-active" data-tier="student">Student Sessions</button>
+        <button data-tier="expert">Career Expert</button>
+      </div>
+
+      <div class="pricing-tier student-tier active">
+        <p class="tier-description">Connect with students who recently went through the same decisions you're facing now.</p>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <div class="price-header">
+              <h3>Quick Check</h3>
+              <div class="price-amount">
+                <strong>100</strong>
+                <span>lei</span>
+              </div>
+            </div>
+            <ul class="price-features">
+              <li><span id="check-icon-1"></span>45 minutes</li>
+              <li><span id="check-icon-2"></span>One specific question/problem</li>
+              <li><span id="check-icon-3"></span>Study/career choice guidance</li>
+              <li><span id="check-icon-4"></span>"What is it actually like?"</li>
+              <li><span id="check-icon-5"></span>Personal experience sharing</li>
+            </ul>
+            <button class="primary-button full">Select plan <span id="arrow-icon-1"></span></button>
+            <a href="#" class="feedback-link" data-tier="Quick Check Student">Share feedback on this plan</a>
+          </article>
+
+          <article class="price-card featured">
+            <span class="featured-badge">Most popular</span>
+            <div class="price-header">
+              <h3>Deep Dive</h3>
+              <div class="price-amount">
+                <strong>275</strong>
+                <span>lei</span>
+              </div>
+            </div>
+            <ul class="price-features">
+              <li><span id="check-icon-6"></span>60–75 minutes</li>
+              <li><span id="check-icon-7"></span>Explore 2–3 options</li>
+              <li><span id="check-icon-8"></span>University/industry/career paths</li>
+              <li><span id="check-icon-9"></span>CV/LinkedIn/profile feedback</li>
+              <li><span id="check-icon-10"></span>Personalized recommendations</li>
+              <li><span id="check-icon-11"></span>Written next steps</li>
+            </ul>
+            <button class="primary-button full">Select plan <span id="arrow-icon-2"></span></button>
+            <a href="#" class="feedback-link" data-tier="Deep Dive Student">Share feedback on this plan</a>
+          </article>
+
+          <article class="price-card">
+            <div class="price-header">
+              <h3>Career Roadmap</h3>
+              <div class="price-amount">
+                <strong>450</strong>
+                <span>lei</span>
+              </div>
+            </div>
+            <ul class="price-features">
+              <li><span id="check-icon-12"></span>2 × 60 minute sessions</li>
+              <li><span id="check-icon-13"></span>Explore the whole direction</li>
+              <li><span id="check-icon-14"></span>Compare options and choose best</li>
+              <li><span id="check-icon-15"></span>Alumni perspective</li>
+              <li><span id="check-icon-16"></span>Detailed CV/profile feedback</li>
+              <li><span id="check-icon-17"></span>Personal action plan</li>
+              <li><span id="check-icon-18"></span>Follow-up session</li>
+              <li><span id="check-icon-19"></span>Letter of recommendation</li>
+            </ul>
+            <button class="primary-button full">Select plan <span id="arrow-icon-3"></span></button>
+            <a href="#" class="feedback-link" data-tier="Career Roadmap Student">Share feedback on this plan</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="pricing-tier expert-tier">
+        <p class="tier-description">Get advice from someone who has actually hired, managed, built or navigated careers for 10+ years.</p>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <div class="price-header">
+              <h3>Career Check</h3>
+              <div class="price-amount">
+                <strong>200</strong>
+                <span>lei</span>
+              </div>
+            </div>
+            <ul class="price-features">
+              <li><span id="check-icon-20"></span>60 minutes</li>
+              <li><span id="check-icon-21"></span>Direction validation</li>
+              <li><span id="check-icon-22"></span>Career-market perspective</li>
+              <li><span id="check-icon-23"></span>Specific questions answered</li>
+              <li><span id="check-icon-24"></span>Concrete next steps</li>
+            </ul>
+            <button class="primary-button full">Select plan <span id="arrow-icon-4"></span></button>
+            <a href="#" class="feedback-link" data-tier="Career Check Expert">Share feedback on this plan</a>
+          </article>
+
+          <article class="price-card featured">
+            <span class="featured-badge">Most popular</span>
+            <div class="price-header">
+              <h3>Career Strategy</h3>
+              <div class="price-amount">
+                <strong>375</strong>
+                <span>lei</span>
+              </div>
+            </div>
+            <ul class="price-features">
+              <li><span id="check-icon-25"></span>75 minutes</li>
+              <li><span id="check-icon-26"></span>Career options exploration</li>
+              <li><span id="check-icon-27"></span>Skills and gaps analysis</li>
+              <li><span id="check-icon-28"></span>Positioning strategy</li>
+              <li><span id="check-icon-29"></span>CV/LinkedIn review</li>
+              <li><span id="check-icon-30"></span>Market perspective</li>
+              <li><span id="check-icon-31"></span>Personalized recommendations</li>
+            </ul>
+            <button class="primary-button full">Select plan <span id="arrow-icon-5"></span></button>
+            <a href="#" class="feedback-link" data-tier="Career Strategy Expert">Share feedback on this plan</a>
+          </article>
+
+          <article class="price-card">
+            <div class="price-header">
+              <h3>Career Roadmap</h3>
+              <div class="price-amount">
+                <strong>600</strong>
+                <span>lei</span>
+              </div>
+            </div>
+            <ul class="price-features">
+              <li><span id="check-icon-32"></span>2 × 75 minute sessions</li>
+              <li><span id="check-icon-33"></span>Deep career exploration</li>
+              <li><span id="check-icon-34"></span>Multiple career paths</li>
+              <li><span id="check-icon-35"></span>Skills and opportunities</li>
+              <li><span id="check-icon-36"></span>Strategic positioning</li>
+              <li><span id="check-icon-37"></span>Comprehensive action plan</li>
+              <li><span id="check-icon-38"></span>Follow-up session</li>
+              <li><span id="check-icon-39"></span>Letter of recommendation</li>
+            </ul>
+            <button class="primary-button full">Select plan <span id="arrow-icon-6"></span></button>
+            <a href="#" class="feedback-link" data-tier="Career Roadmap Expert">Share feedback on this plan</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-faq shell">
+      <div class="section-heading">
+        <div><p class="eyebrow">Common questions</p><h2>How it works</h2></div>
+      </div>
+      <div class="faq-grid">
+        <article class="faq-item">
+          <h3>Who are the student advisors?</h3>
+          <p>Current university students or recent graduates who went through the same application process and decisions you're facing. They share real experience about what it's actually like.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Who are the career experts?</h3>
+          <p>Professionals with 10+ years of experience hiring, managing teams, or building careers in their field. They provide market perspective and strategic guidance.</p>
+        </article>
+        <article class="faq-item">
+          <h3>How do I book a session?</h3>
+          <p>Select a plan, complete payment, and you'll be matched with an advisor based on your profile and goals. You'll receive their availability within 24 hours.</p>
+        </article>
+        <article class="faq-item">
+          <h3>What if I need to reschedule?</h3>
+          <p>You can reschedule up to 48 hours before your session at no charge. Sessions cancelled with less notice forfeit 50% of the fee.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Are sessions online or in person?</h3>
+          <p>All sessions are conducted online via video call, making it easy to connect with advisors anywhere in the world.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Can I get a refund?</h3>
+          <p>If you're not satisfied with your first session, contact us within 48 hours for a full refund. Subsequent sessions are non-refundable but can be rescheduled.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <div class="shell">
+        <a href="../landing/index.html" class="brand brand-light">
+          <img src="../assets/images/loopy.png" alt="Loopy" class="brand-logo">
+        </a>
+        <p>Your future is yours. Loopy helps untangle the way.</p>
+        <span>© 2026 Loopy</span>
+      </div>
+    </footer>
+  </main>
+
+  <button class="help-button" id="help-button" aria-label="Help">
+    <img src="../assets/images/loopy.png" alt="Help">
+  </button>
+  <div class="help-menu" id="help-menu">
+    <a href="pricing.html"><span id="help-pricing-icon"></span>View pricing plans</a>
+    <button onclick="showContactModal()"><span id="help-contact-icon"></span>Contact support</button>
+    <button onclick="showTourModal()"><span id="help-tour-icon"></span>Take a tour</button>
+  </div>
+
+  <script src="../assets/js/icons.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script src="../assets/js/pricing.js"></script>
+</body>
+</html>

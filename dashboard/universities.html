@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universities - Loopy</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <main class="dashboard">
+    <nav class="dash-nav shell">
+      <a href="../landing/index.html" class="brand">
+        <img src="../assets/images/loopy.png" alt="Loopy" class="brand-logo">
+      </a>
+      <div class="dash-links" id="dash-links">
+        <a href="index.html">Overview</a>
+        <a href="counselors.html">Counselors</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a href="universities.html">Universities</a>
+        <button id="saved-btn">Saved <span class="nav-count">0</span></button>
+      </div>
+      <div class="nav-profile">
+        <button class="icon-button mobile-menu" id="mobile-menu" aria-label="Menu"><span id="menu-icon"></span></button>
+        <button class="profile-button">
+          <span>ST</span>
+          <small>Student<br><b>View account</b></small>
+        </button>
+      </div>
+    </nav>
+
+    <section class="dash-hero shell">
+      <div class="welcome">
+        <p class="eyebrow">Best fit universities</p>
+        <h1>Where you belong.</h1>
+        <p>These universities match your goals, academic profile and preferred study locations.</p>
+      </div>
+    </section>
+
+    <section class="university-filters shell" style="padding-top: 50px;">
+      <div class="filter-row">
+        <div class="search-box">
+          <input type="text" placeholder="Search by name..." id="uni-search">
+          <button class="icon-button" onclick="applyFilters()"><span id="search-icon"></span></button>
+        </div>
+        <select id="filter-location" onchange="applyFilters()">
+          <option value="">All locations</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="United States">United States</option>
+          <option value="Switzerland">Switzerland</option>
+          <option value="France">France</option>
+          <option value="Germany">Germany</option>
+          <option value="Canada">Canada</option>
+          <option value="Australia">Australia</option>
+          <option value="Singapore">Singapore</option>
+          <option value="Netherlands">Netherlands</option>
+          <option value="Hong Kong">Hong Kong</option>
+          <option value="China">China</option>
+          <option value="Belgium">Belgium</option>
+          <option value="Denmark">Denmark</option>
+          <option value="Italy">Italy</option>
+        </select>
+        <select id="filter-subject" onchange="applyFilters()">
+          <option value="">All subjects</option>
+          <option value="Medicine">Medicine</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Business">Business</option>
+          <option value="Law">Law</option>
+          <option value="Arts">Arts & Design</option>
+          <option value="Science">Science & Research</option>
+        </select>
+        <select id="filter-acceptance" onchange="applyFilters()">
+          <option value="">Acceptance rate</option>
+          <option value="low">Under 10%</option>
+          <option value="medium">10-20%</option>
+          <option value="high">Over 20%</option>
+        </select>
+        <button class="secondary-button small" onclick="resetFilters()">Reset filters</button>
+      </div>
+    </section>
+
+    <section class="matches shell" style="padding-top: 30px;">
+      <div class="university-grid">
+        <article class="university-card">
+          <div class="university-header">
+            <span class="uni-monogram">K</span>
+            <div>
+              <span class="match-badge">96% match</span>
+              <h3>King's College London</h3>
+              <p>United Kingdom</p>
+            </div>
+          </div>
+          <div class="university-info">
+            <div class="info-row">
+              <span>Strong programs</span>
+              <strong>Medicine, Law, Engineering</strong>
+            </div>
+            <div class="info-row">
+              <span>International students</span>
+              <strong>42%</strong>
+            </div>
+            <div class="info-row">
+              <span>Acceptance rate</span>
+              <strong>13%</strong>
+            </div>
+          </div>
+          <button class="university-action">Explore university <span id="arrow-icon-1"></span></button>
+        </article>
+
+        <article class="university-card">
+          <div class="university-header">
+            <span class="uni-monogram">U</span>
+            <div>
+              <span class="match-badge">94% match</span>
+              <h3>UCLA</h3>
+              <p>United States</p>
+            </div>
+          </div>
+          <div class="university-info">
+            <div class="info-row">
+              <span>Strong programs</span>
+              <strong>Computer Science, Business, Arts</strong>
+            </div>
+            <div class="info-row">
+              <span>International students</span>
+              <strong>16%</strong>
+            </div>
+            <div class="info-row">
+              <span>Acceptance rate</span>
+              <strong>11%</strong>
+            </div>
+          </div>
+          <button class="university-action">Explore university <span id="arrow-icon-2"></span></button>
+        </article>
+
+        <article class="university-card">
+          <div class="university-header">
+            <span class="uni-monogram">E</span>
+            <div>
+              <span class="match-badge">91% match</span>
+              <h3>ETH Zürich</h3>
+              <p>Switzerland</p>
+            </div>
+          </div>
+          <div class="university-info">
+            <div class="info-row">
+              <span>Strong programs</span>
+              <strong>Engineering, Science, Technology</strong>
+            </div>
+            <div class="info-row">
+              <span>International students</span>
+              <strong>39%</strong>
+            </div>
+            <div class="info-row">
+              <span>Acceptance rate</span>
+              <strong>8%</strong>
+            </div>
+          </div>
+          <button class="university-action">Explore university <span id="arrow-icon-3"></span></button>
+        </article>
+
+        <article class="university-card">
+          <div class="university-header">
+            <span class="uni-monogram">S</span>
+            <div>
+              <span class="match-badge">89% match</span>
+              <h3>Sorbonne University</h3>
+              <p>France</p>
+            </div>
+          </div>
+          <div class="university-info">
+            <div class="info-row">
+              <span>Strong programs</span>
+              <strong>Humanities, Medicine, Science</strong>
+            </div>
+            <div class="info-row">
+              <span>International students</span>
+              <strong>20%</strong>
+            </div>
+            <div class="info-row">
+              <span>Acceptance rate</span>
+              <strong>15%</strong>
+            </div>
+          </div>
+          <button class="university-action">Explore university <span id="arrow-icon-4"></span></button>
+        </article>
+
+        <article class="university-card">
+          <div class="university-header">
+            <span class="uni-monogram">N</span>
+            <div>
+              <span class="match-badge">87% match</span>
+              <h3>New York University</h3>
+              <p>United States</p>
+            </div>
+          </div>
+          <div class="university-info">
+            <div class="info-row">
+              <span>Strong programs</span>
+              <strong>Business, Arts, Social Sciences</strong>
+            </div>
+            <div class="info-row">
+              <span>International students</span>
+              <strong>27%</strong>
+            </div>
+            <div class="info-row">
+              <span>Acceptance rate</span>
+              <strong>12%</strong>
+            </div>
+          </div>
+          <button class="university-action">Explore university <span id="arrow-icon-5"></span></button>
+        </article>
+
+        <article class="university-card">
+          <div class="university-header">
+            <span class="uni-monogram">U</span>
+            <div>
+              <span class="match-badge">86% match</span>
+              <h3>University College London</h3>
+              <p>United Kingdom</p>
+            </div>
+          </div>
+          <div class="university-info">
+            <div class="info-row">
+              <span>Strong programs</span>
+              <strong>Architecture, Medicine, Law</strong>
+            </div>
+            <div class="info-row">
+              <span>International students</span>
+              <strong>48%</strong>
+            </div>
+            <div class="info-row">
+              <span>Acceptance rate</span>
+              <strong>10%</strong>
+            </div>
+          </div>
+          <button class="university-action">Explore university <span id="arrow-icon-6"></span></button>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <div class="shell">
+        <a href="../landing/index.html" class="brand brand-light">
+          <img src="../assets/images/loopy.png" alt="Loopy" class="brand-logo">
+        </a>
+        <p>Your future is yours. Loopy helps untangle the way.</p>
+        <span>© 2026 Loopy</span>
+      </div>
+    </footer>
+  </main>
+
+  <button class="help-button" id="help-button" aria-label="Help">
+    <img src="../assets/images/loopy.png" alt="Help">
+  </button>
+  <div class="help-menu" id="help-menu">
+    <a href="pricing.html"><span id="help-pricing-icon"></span>View pricing plans</a>
+    <button onclick="showContactModal()"><span id="help-contact-icon"></span>Contact support</button>
+    <button onclick="showTourModal()"><span id="help-tour-icon"></span>Take a tour</button>
+  </div>
+
+  <script src="../assets/js/icons.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script src="../assets/js/universities.js"></script>
+</body>
+</html>

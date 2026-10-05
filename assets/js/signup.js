@@ -76,18 +76,25 @@ function registerUser() {
     return;
   }
 
-  const result = AUTH.register(signupData.email, signupData.password, signupData.firstName, signupData.lastName);
+  const isRetaking = localStorage.getItem('loopy_retaking_quiz') === 'true';
 
-  if (result.success) {
-    AUTH.login(signupData.email, signupData.password);
+  if (isRetaking) {
+    localStorage.removeItem('loopy_retaking_quiz');
     AUTH.updateUser({ profileData: signupData });
-
     window.location.href = 'index.html';
   } else {
-    alert(result.error);
-    currentStep = 1;
-    updateProgress();
-    renderStep();
+    const result = AUTH.register(signupData.email, signupData.password, signupData.firstName, signupData.lastName);
+
+    if (result.success) {
+      AUTH.login(signupData.email, signupData.password);
+      AUTH.updateUser({ profileData: signupData });
+      window.location.href = 'index.html';
+    } else {
+      alert(result.error);
+      currentStep = 1;
+      updateProgress();
+      renderStep();
+    }
   }
 }
 
@@ -109,8 +116,22 @@ function renderStep() {
 
 function restoreStepData(step) {
   const form = document.getElementById('signup-form');
+  const isRetaking = localStorage.getItem('loopy_retaking_quiz') === 'true';
 
   if (step === 1) {
+    if (isRetaking) {
+      const user = AUTH.getCurrentUser();
+      if (user) {
+        signupData.firstName = user.firstName;
+        signupData.lastName = user.lastName;
+        signupData.email = user.email;
+        signupData.password = user.password;
+        if (user.profileData) {
+          signupData.grade = user.profileData.grade || '';
+          signupData.country = user.profileData.country || '';
+        }
+      }
+    }
     if (signupData.firstName) form.querySelector('[name="firstname"]').value = signupData.firstName;
     if (signupData.lastName) form.querySelector('[name="lastname"]').value = signupData.lastName;
     if (signupData.email) form.querySelector('[name="email"]').value = signupData.email;

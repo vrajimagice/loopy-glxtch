@@ -15,8 +15,8 @@
       <div class="landing-links">
         <a href="#why">Why us</a>
         <a href="#partners">Partners</a>
-        <a href="../dashboard/index.html" class="text-button">Dashboard</a>
-        <a href="../dashboard/index.html" class="primary-button small">Start your journey <span id="arrow-icon"></span></a>
+        <a href="../dashboard/login.html" class="text-button">Log in</a>
+        <a href="../dashboard/signup.html" class="primary-button small">Start your journey <span id="arrow-icon"></span></a>
       </div>
     </nav>
 
@@ -26,8 +26,8 @@
         <h1>There is more than one way <em>forward.</em></h1>
         <p class="hero-lede">We connect ambitious students with the right counselors, universities and real-world experiences, based on who they are and who they want to become.</p>
         <div class="hero-actions">
-          <a href="../dashboard/index.html" class="primary-button">Find my path <span id="arrow-icon-2"></span></a>
-          <a href="../dashboard/index.html" class="secondary-button">Explore platform</a>
+          <a href="../dashboard/signup.html" class="primary-button">Find my path <span id="arrow-icon-2"></span></a>
+          <a href="../dashboard/login.html" class="secondary-button">Log in</a>
         </div>
         <div class="trust-row">
           <div class="avatars"><span>MC</span><span>EP</span><span>SR</span></div>
@@ -66,9 +66,58 @@
       </div>
     </section>
 
+    <section class="testimonials shell">
+      <div class="section-heading">
+        <div><p class="eyebrow">Student voices</p><h2>What our students say</h2></div>
+      </div>
+      <div class="testimonial-grid">
+        <article class="testimonial-card">
+          <div class="testimonial-rating">
+            <span id="star-t1"></span><span id="star-t2"></span><span id="star-t3"></span><span id="star-t4"></span><span id="star-t5"></span>
+          </div>
+          <p class="testimonial-text">"My counselor helped me understand which universities actually matched my goals. Instead of applying everywhere, I focused on three perfect fits and got into my top choice."</p>
+          <div class="testimonial-author">
+            <span class="author-avatar">AM</span>
+            <div>
+              <strong>Ana Martinez</strong>
+              <small>Accepted to King's College London</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-rating">
+            <span id="star-t6"></span><span id="star-t7"></span><span id="star-t8"></span><span id="star-t9"></span><span id="star-t10"></span>
+          </div>
+          <p class="testimonial-text">"The skill gap analysis was eye-opening. I realized I needed more leadership experience, so I joined a volunteering program. Six months later, my profile was completely different."</p>
+          <div class="testimonial-author">
+            <span class="author-avatar">DC</span>
+            <div>
+              <strong>David Chen</strong>
+              <small>Engineering at ETH Zürich</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-rating">
+            <span id="star-t11"></span><span id="star-t12"></span><span id="star-t13"></span><span id="star-t14"></span><span id="star-t15"></span>
+          </div>
+          <p class="testimonial-text">"I was stuck between medicine and business. My counselor session helped me see which path actually matched my strengths. Best decision I ever made."</p>
+          <div class="testimonial-author">
+            <span class="author-avatar">SK</span>
+            <div>
+              <strong>Sarah Kim</strong>
+              <small>Business at NYU</small>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="landing-cta shell">
       <div><p class="eyebrow">Your future starts with one step</p><h2>Ready to get Loopy about your future?</h2></div>
-      <a href="../dashboard/index.html" class="silver-button">Create your free profile <span id="arrow-icon-3"></span></a>
+      <a href="../dashboard/signup.html" class="silver-button">Create your free profile <span id="arrow-icon-3"></span></a>
     </section>
   </main>
 
@@ -78,6 +127,16 @@
     document.getElementById('arrow-icon-2').innerHTML = icon('arrow', 18);
     document.getElementById('arrow-icon-3').innerHTML = icon('arrow', 18);
     document.getElementById('check-icon').innerHTML = icon('check', 17);
+
+    const starIds = [
+      'star-t1', 'star-t2', 'star-t3', 'star-t4', 'star-t5',
+      'star-t6', 'star-t7', 'star-t8', 'star-t9', 'star-t10',
+      'star-t11', 'star-t12', 'star-t13', 'star-t14', 'star-t15'
+    ];
+    starIds.forEach(function(id) {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = icon('star', 14);
+    });
   </script>
 </body>
 </html>

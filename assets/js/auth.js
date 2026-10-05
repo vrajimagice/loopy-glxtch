@@ -1,4 +1,39 @@
 const AUTH = {
+  // Initialize demo account
+  initializeDemoAccount: function() {
+    const users = JSON.parse(localStorage.getItem('loopy_users') || '{}');
+    const demoEmail = 'demo@loopy.com';
+
+    if (!users[demoEmail]) {
+      users[demoEmail] = {
+        email: demoEmail,
+        password: 'demo123',
+        firstName: 'Demo',
+        lastName: 'Student',
+        profilePicture: null,
+        useLoopy: true,
+        savedItems: [
+          {
+            title: 'Coastal Changemakers',
+            org: 'OceanKind Europe',
+            tag: 'Environment',
+            meta: 'Lisbon · 2 weeks · July',
+            url: 'https://www.volunteerhq.org'
+          }
+        ],
+        profileData: {
+          grade: 'Grade 11',
+          country: 'United States',
+          interests: ['Technology & AI', 'Science & Research'],
+          certainty: 'I have two or three ideas',
+          studyLocation: 'Open to exploring'
+        },
+        createdAt: new Date().toISOString()
+      };
+      localStorage.setItem('loopy_users', JSON.stringify(users));
+    }
+  },
+
   register: function(email, password, firstName, lastName) {
     email = (email || '').toLowerCase().trim();
 
@@ -34,6 +69,9 @@ const AUTH = {
     if (!email || !password) {
       return { success: false, error: 'Email and password are required' };
     }
+
+    // Initialize demo account if it doesn't exist
+    this.initializeDemoAccount();
 
     const users = JSON.parse(localStorage.getItem('loopy_users') || '{}');
 

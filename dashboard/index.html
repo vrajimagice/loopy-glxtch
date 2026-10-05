@@ -13,10 +13,10 @@
         <img src="../assets/images/loopy.png" alt="Loopy" class="brand-logo">
       </a>
       <div class="dash-links" id="dash-links">
-        <a href="#overview">Overview</a>
-        <a href="#counselors">Counselors</a>
-        <a href="#opportunities">Opportunities</a>
-        <a href="#degrees">Universities</a>
+        <a href="index.html">Overview</a>
+        <a href="counselors.html">Counselors</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a href="universities.html">Universities</a>
         <button id="saved-btn">Saved <span class="nav-count">0</span></button>
       </div>
       <div class="nav-profile">
@@ -28,7 +28,7 @@
       </div>
     </nav>
 
-    <section class="dash-hero shell" id="overview">
+    <section class="dash-hero shell">
       <div class="welcome">
         <p class="eyebrow">Monday, May 12</p>
         <h1>Welcome, Student.</h1>
@@ -38,6 +38,39 @@
         <div class="score-ring"><strong>68</strong><span>%</span></div>
         <span><b>Profile strength</b><small>2 actions to improve</small></span>
         <span id="chevron-icon"></span>
+      </div>
+    </section>
+
+    <section class="shell" style="padding-top: 50px;">
+      <div class="analysis-note" style="cursor: pointer;" onclick="window.location.href='pricing.html'">
+        <span id="pricing-icon"></span>
+        <span><strong>Unlock personalized guidance sessions</strong>Book time with a student mentor or career expert who's been where you want to go.</span>
+      </div>
+    </section>
+
+    <section class="news-section shell">
+      <div class="section-heading">
+        <div><p class="eyebrow">Latest for you</p><h2>News & updates</h2></div>
+      </div>
+      <div class="news-row">
+        <article class="news-card">
+          <span class="news-date">May 10</span>
+          <h3>New scholarship opportunities now open</h3>
+          <p>Three full-ride scholarships for STEM students studying in Europe have just been announced.</p>
+          <button class="news-link">Read more <span id="news-arrow-1"></span></button>
+        </article>
+        <article class="news-card">
+          <span class="news-date">May 8</span>
+          <h3>Application deadlines extended</h3>
+          <p>Five partner universities have extended their application windows through June 15.</p>
+          <button class="news-link">Read more <span id="news-arrow-2"></span></button>
+        </article>
+        <article class="news-card">
+          <span class="news-date">May 5</span>
+          <h3>Virtual campus tours this week</h3>
+          <p>Join live tours of UCLA, King's College London and ETH Zürich this Thursday and Friday.</p>
+          <button class="news-link">Read more <span id="news-arrow-3"></span></button>
+        </article>
       </div>
     </section>
 
@@ -79,67 +112,94 @@
       </div>
     </section>
 
-    <section class="matches shell" id="counselors">
+    <section class="matches shell" style="padding-top: 80px;">
       <div class="section-heading">
-        <div><p class="eyebrow">Selected for your goals</p><h2>Counselors who get where you're going.</h2></div>
-        <button class="link-button">See more counselors <span id="arrow-icon-4"></span></button>
+        <div><p class="eyebrow">Best match universities</p><h2>Where you belong.</h2></div>
+        <a href="universities.html" class="link-button">View all universities <span id="arrow-icon-4"></span></a>
       </div>
-      <div class="match-layout">
-        <div class="counselor-grid">
-          <article class="counselor-card">
-            <div class="portrait">
-              <img src="https://images.unsplash.com/photo-1484863137850-59afcfe05386?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=700" alt="Dr. Maya Collins">
-              <span>98% match</span>
-              <div class="counselor-details">
-                <p><span id="star-icon-1"></span> 4.9 rating</p>
-                <p><span id="clock-icon-1"></span> Today, 4:30 PM</p>
-                <p>+1 202 555 0184</p>
-              </div>
+      <div class="university-search-bar">
+        <input type="text" placeholder="Search universities by name, location, or program..." id="uni-search-overview">
+        <button class="icon-button" onclick="searchUniversitiesOverview()"><span id="search-icon-overview"></span></button>
+      </div>
+      <div class="university-preview" id="university-preview-grid"></div>
+    </section>
+
+    <section class="matches shell" style="padding-top: 80px;">
+      <div class="section-heading">
+        <div><p class="eyebrow">Sponsored</p><h2>Most applied to this month.</h2></div>
+      </div>
+      <div class="university-preview" id="sponsored-popular-grid"></div>
+    </section>
+
+    <section class="matches shell" style="padding-top: 80px;">
+      <div class="section-heading">
+        <div><p class="eyebrow">Trending in Business</p><h2>Top business schools.</h2></div>
+        <a href="universities.html" class="link-button">View all universities <span id="arrow-icon-business"></span></a>
+      </div>
+      <div class="university-preview" id="sponsored-business-grid"></div>
+    </section>
+
+    <section class="matches shell" style="padding-top: 80px;">
+      <div class="section-heading">
+        <div><p class="eyebrow">Trending in Medicine</p><h2>Leading medical schools.</h2></div>
+        <a href="universities.html" class="link-button">View all universities <span id="arrow-icon-medicine"></span></a>
+      </div>
+      <div class="university-preview" id="sponsored-medicine-grid"></div>
+    </section>
+
+    <section class="matches shell" style="padding-top: 80px;">
+      <div><p class="eyebrow">Selected for your goals</p><h2>Your matched counselors.</h2></div>
+        <a href="counselors.html" class="link-button">See all counselors <span id="arrow-icon-8"></span></a>
+      </div>
+      <div class="counselor-grid">
+        <article class="counselor-card">
+          <div class="portrait">
+            <img src="https://images.unsplash.com/photo-1484863137850-59afcfe05386?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=700" alt="Dr. Maya Collins">
+            <span>98% match</span>
+            <div class="counselor-details">
+              <p><span id="star-icon-1"></span> 4.9 rating</p>
+              <p><span id="clock-icon-1"></span> Today, 4:30 PM</p>
+              <p>+1 202 555 0184</p>
             </div>
-            <div class="counselor-info">
-              <h3>Dr. Maya Collins</h3>
-              <p>STEM & US admissions</p>
-              <button aria-label="Message Dr. Maya Collins"><span id="arrow-icon-5"></span></button>
+          </div>
+          <div class="counselor-info">
+            <h3>Dr. Maya Collins</h3>
+            <p>STEM & US admissions</p>
+            <button aria-label="Message Dr. Maya Collins"><span id="arrow-icon-9"></span></button>
+          </div>
+        </article>
+        <article class="counselor-card">
+          <div class="portrait">
+            <img src="https://images.unsplash.com/photo-1573496527892-904f897eb744?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=700" alt="Elena Park">
+            <span>94% match</span>
+            <div class="counselor-details">
+              <p><span id="star-icon-2"></span> 4.8 rating</p>
+              <p><span id="clock-icon-2"></span> Tomorrow, 10:00 AM</p>
+              <p>+44 20 7946 0312</p>
             </div>
-          </article>
-          <article class="counselor-card">
-            <div class="portrait">
-              <img src="https://images.unsplash.com/photo-1573496527892-904f897eb744?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=700" alt="Elena Park">
-              <span>94% match</span>
-              <div class="counselor-details">
-                <p><span id="star-icon-2"></span> 4.8 rating</p>
-                <p><span id="clock-icon-2"></span> Tomorrow, 10:00 AM</p>
-                <p>+44 20 7946 0312</p>
-              </div>
+          </div>
+          <div class="counselor-info">
+            <h3>Elena Park</h3>
+            <p>Europe & scholarships</p>
+            <button aria-label="Message Elena Park"><span id="arrow-icon-10"></span></button>
+          </div>
+        </article>
+        <article class="counselor-card">
+          <div class="portrait">
+            <img src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=700" alt="Sofia Ramirez">
+            <span>91% match</span>
+            <div class="counselor-details">
+              <p><span id="star-icon-3"></span> 4.9 rating</p>
+              <p><span id="clock-icon-3"></span> Friday, 1:15 PM</p>
+              <p>+34 91 555 0142</p>
             </div>
-            <div class="counselor-info">
-              <h3>Elena Park</h3>
-              <p>Europe & scholarships</p>
-              <button aria-label="Message Elena Park"><span id="arrow-icon-6"></span></button>
-            </div>
-          </article>
-          <article class="counselor-card">
-            <div class="portrait">
-              <img src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=700" alt="Sofia Ramirez">
-              <span>91% match</span>
-              <div class="counselor-details">
-                <p><span id="star-icon-3"></span> 4.9 rating</p>
-                <p><span id="clock-icon-3"></span> Friday, 1:15 PM</p>
-                <p>+34 91 555 0142</p>
-              </div>
-            </div>
-            <div class="counselor-info">
-              <h3>Sofia Ramirez</h3>
-              <p>Creative paths & portfolios</p>
-              <button aria-label="Message Sofia Ramirez"><span id="arrow-icon-7"></span></button>
-            </div>
-          </article>
-        </div>
-        <aside class="university-ad">
-          <p class="eyebrow light">University spotlight</p>
-          <div><span class="uni-monogram">K</span><h3>King's College<br>London</h3><p>Discover courses, scholarships and life in the heart of London.</p></div>
-          <button>Explore university <span id="arrow-icon-8"></span></button>
-        </aside>
+          </div>
+          <div class="counselor-info">
+            <h3>Sofia Ramirez</h3>
+            <p>Creative paths & portfolios</p>
+            <button aria-label="Message Sofia Ramirez"><span id="arrow-icon-11"></span></button>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -147,50 +207,50 @@
       <div class="section-heading"><div><p class="eyebrow">Build what comes next</p><h2>Your path, one experience at a time.</h2></div><p class="section-note">Chosen to close your skill gaps and strengthen your application.</p></div>
       <div class="path-track">
         <div class="track-line"></div>
-        <a href="#opportunities" class="active">
+        <button onclick="showPathModal('volunteering')" class="active" style="border: none; background: none; cursor: pointer; text-align: left; width: 100%;">
           <span class="path-number">01</span>
           <span class="path-icon"><span id="heart-icon"></span></span>
           <strong>Volunteering programs</strong><small>120+ opportunities</small>
-        </a>
-        <a href="#opportunities">
+        </button>
+        <button onclick="showPathModal('internships')" style="border: none; background: none; cursor: pointer; text-align: left; width: 100%;">
           <span class="path-number">02</span>
           <span class="path-icon"><span id="briefcase-icon"></span></span>
           <strong>Student internships</strong><small>84 open roles</small>
-        </a>
-        <a href="#opportunities">
+        </button>
+        <button onclick="showPathModal('exams')" style="border: none; background: none; cursor: pointer; text-align: left; width: 100%;">
           <span class="path-number">03</span>
           <span class="path-icon"><span id="book-icon"></span></span>
           <strong>Exam preparation</strong><small>SAT, IELTS & more</small>
-        </a>
-        <a href="#opportunities">
+        </button>
+        <button onclick="showPathModal('summer')" style="border: none; background: none; cursor: pointer; text-align: left; width: 100%;">
           <span class="path-number">04</span>
           <span class="path-icon"><span id="sun-icon"></span></span>
           <strong>Summer camps</strong><small>Across 22 countries</small>
-        </a>
+        </button>
       </div>
     </section>
 
-    <section class="opportunity-section" id="opportunities">
+    <section class="opportunity-section">
       <div class="shell">
         <div class="section-heading">
-          <div><p class="eyebrow">Recommended for you</p><h2>Volunteering programs</h2></div>
-          <button class="link-button">View more opportunities <span id="arrow-icon-9"></span></button>
+          <div><p class="eyebrow">Recommended for you</p><h2>Opportunities to explore</h2></div>
+          <a href="opportunities.html" class="link-button">View all opportunities <span id="arrow-icon-12"></span></a>
         </div>
         <div class="opportunity-grid">
           <article>
             <div class="opportunity-top"><span>01</span><small>Environment</small></div>
             <div><p>OceanKind Europe</p><h3>Coastal Changemakers</h3><span class="meta"><span id="calendar-icon-1"></span>Lisbon · 2 weeks · July</span></div>
-            <button><span>View details</span><span id="arrow-icon-10"></span></button>
+            <button><span>View details</span><span id="arrow-icon-13"></span></button>
           </article>
           <article>
             <div class="opportunity-top"><span>02</span><small>Education</small></div>
             <div><p>Bright Futures</p><h3>Read Together</h3><span class="meta"><span id="calendar-icon-2"></span>Remote · 4 hrs/week</span></div>
-            <button><span>View details</span><span id="arrow-icon-11"></span></button>
+            <button><span>View details</span><span id="arrow-icon-14"></span></button>
           </article>
           <article>
             <div class="opportunity-top"><span>03</span><small>Community</small></div>
             <div><p>Neighbourhood Lab</p><h3>City Food Network</h3><span class="meta"><span id="calendar-icon-3"></span>Local · Saturdays</span></div>
-            <button><span>View details</span><span id="arrow-icon-12"></span></button>
+            <button><span>View details</span><span id="arrow-icon-15"></span></button>
           </article>
         </div>
       </div>
@@ -199,10 +259,10 @@
     <section class="offer shell">
       <span class="offer-label">Member offer</span>
       <div><p class="eyebrow light">This month only</p><h2>Get a free 30-minute application review.</h2><p>One of our senior counselors will review your profile and share three concrete ways to make it stronger.</p></div>
-      <button class="silver-button">Claim free review <span id="arrow-icon-13"></span></button>
+      <button class="silver-button">Claim free review <span id="arrow-icon-16"></span></button>
     </section>
 
-    <footer id="degrees">
+    <footer>
       <div class="shell">
         <a href="../landing/index.html" class="brand brand-light">
           <img src="../assets/images/loopy.png" alt="Loopy" class="brand-logo">
@@ -211,10 +271,20 @@
         <span>© 2026 Loopy</span>
       </div>
     </footer>
+
+    <button class="help-button" id="help-button" aria-label="Help">
+      <img src="../assets/images/loopy.png" alt="Help">
+    </button>
+    <div class="help-menu" id="help-menu">
+      <a href="pricing.html"><span id="help-pricing-icon"></span>View pricing plans</a>
+      <button onclick="showContactModal()"><span id="help-contact-icon"></span>Contact support</button>
+      <button onclick="showTourModal()"><span id="help-tour-icon"></span>Take a tour</button>
+    </div>
   </main>
 
   <script src="../assets/js/icons.js"></script>
   <script src="../assets/js/auth.js"></script>
   <script src="../assets/js/dashboard.js"></script>
+  <script src="../assets/js/universities.js"></script>
 </body>
 </html>

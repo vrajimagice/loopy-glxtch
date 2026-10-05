@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counselors - Loopy</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <main class="dashboard">
+    <nav class="dash-nav shell">
+      <a href="../landing/index.html" class="brand">
+        <img src="../assets/images/loopy.png" alt="Loopy" class="brand-logo">
+      </a>
+      <div class="dash-links" id="dash-links">
+        <a href="index.html">Overview</a>
+        <a href="counselors.html">Counselors</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a href="universities.html">Universities</a>
+        <button id="saved-btn">Saved <span class="nav-count">0</span></button>
+      </div>
+      <div class="nav-profile">
+        <button class="icon-button mobile-menu" id="mobile-menu" aria-label="Menu"><span id="menu-icon"></span></button>
+        <button class="profile-button">
+          <span>ST</span>
+          <small>Student<br><b>View account</b></small>
+        </button>
+      </div>
+    </nav>
+
+    <section class="dash-hero shell">
+      <div class="welcome">
+        <p class="eyebrow">Your guidance team</p>
+        <h1>Counselors who get it.</h1>
+        <p>Matched to your goals, academic interests and preferred destinations.</p>
+      </div>
+    </section>
+
+    <section class="matches shell" style="padding-top: 50px;">
+      <div class="counselor-grid">
+        <article class="counselor-card">
+          <div class="portrait">
+            <img src="https://images.unsplash.com/photo-1484863137850-59afcfe05386?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=700" alt="Dr. Maya Collins">
+            <span>98% match</span>
+            <div class="counselor-details">
+              <p><span id="star-icon-1"></span> 4.9 rating</p>
+              <p><span id="clock-icon-1"></span> Today, 4:30 PM</p>
+              <p>+1 202 555 0184</p>
+            </div>
+          </div>
+          <div class="counselor-info">
+            <h3>Dr. Maya Collins</h3>
+            <p>STEM & US admissions</p>
+            <button aria-label="Message Dr. Maya Collins"><span id="arrow-icon-1"></span></button>
+          </div>
+        </article>
+
+        <article class="counselor-card">
+          <div class="portrait">
+            <img src="https://images.unsplash.com/photo-1573496527892-904f897eb744?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=700" alt="Elena Park">
+            <span>94% match</span>
+            <div class="counselor-details">
+              <p><span id="star-icon-2"></span> 4.8 rating</p>
+              <p><span id="clock-icon-2"></span> Tomorrow, 10:00 AM</p>
+              <p>+44 20 7946 0312</p>
+            </div>
+          </div>
+          <div class="counselor-info">
+            <h3>Elena Park</h3>
+            <p>Europe & scholarships</p>
+            <button aria-label="Message Elena Park"><span id="arrow-icon-2"></span></button>
+          </div>
+        </article>
+
+        <article class="counselor-card">
+          <div class="portrait">
+            <img src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=700" alt="Sofia Ramirez">
+            <span>91% match</span>
+            <div class="counselor-details">
+              <p><span id="star-icon-3"></span> 4.9 rating</p>
+              <p><span id="clock-icon-3"></span> Friday, 1:15 PM</p>
+              <p>+34 91 555 0142</p>
+            </div>
+          </div>
+          <div class="counselor-info">
+            <h3>Sofia Ramirez</h3>
+            <p>Creative paths & portfolios</p>
+            <button aria-label="Message Sofia Ramirez"><span id="arrow-icon-3"></span></button>
+          </div>
+        </article>
+
+        <article class="counselor-card">
+          <div class="portrait">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=700" alt="Dr. James Chen">
+            <span>90% match</span>
+            <div class="counselor-details">
+              <p><span id="star-icon-4"></span> 5.0 rating</p>
+              <p><span id="clock-icon-4"></span> Monday, 2:00 PM</p>
+              <p>+65 6123 4567</p>
+            </div>
+          </div>
+          <div class="counselor-info">
+            <h3>Dr. James Chen</h3>
+            <p>Asia & Engineering</p>
+            <button aria-label="Message Dr. James Chen"><span id="arrow-icon-4"></span></button>
+          </div>
+        </article>
+
+        <article class="counselor-card">
+          <div class="portrait">
+            <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=700" alt="Amara Williams">
+            <span>88% match</span>
+            <div class="counselor-details">
+              <p><span id="star-icon-5"></span> 4.7 rating</p>
+              <p><span id="clock-icon-5"></span> Wednesday, 11:30 AM</p>
+              <p>+1 617 555 0198</p>
+            </div>
+          </div>
+          <div class="counselor-info">
+            <h3>Amara Williams</h3>
+            <p>Business & scholarships</p>
+            <button aria-label="Message Amara Williams"><span id="arrow-icon-5"></span></button>
+          </div>
+        </article>
+
+        <article class="counselor-card">
+          <div class="portrait">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=700" alt="Marcus Thompson">
+            <span>87% match</span>
+            <div class="counselor-details">
+              <p><span id="star-icon-6"></span> 4.8 rating</p>
+              <p><span id="clock-icon-6"></span> Thursday, 3:45 PM</p>
+              <p>+44 20 7123 4567</p>
+            </div>
+          </div>
+          <div class="counselor-info">
+            <h3>Marcus Thompson</h3>
+            <p>UK universities & gap years</p>
+            <button aria-label="Message Marcus Thompson"><span id="arrow-icon-6"></span></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <div class="shell">
+        <a href="../landing/index.html" class="brand brand-light">
+          <img src="../assets/images/loopy.png" alt="Loopy" class="brand-logo">
+        </a>
+        <p>Your future is yours. Loopy helps untangle the way.</p>
+        <span>© 2026 Loopy</span>
+      </div>
+    </footer>
+  </main>
+
+  <button class="help-button" id="help-button" aria-label="Help">
+    <img src="../assets/images/loopy.png" alt="Help">
+  </button>
+  <div class="help-menu" id="help-menu">
+    <a href="pricing.html"><span id="help-pricing-icon"></span>View pricing plans</a>
+    <button onclick="showContactModal()"><span id="help-contact-icon"></span>Contact support</button>
+    <button onclick="showTourModal()"><span id="help-tour-icon"></span>Take a tour</button>
+  </div>
+
+  <script src="../assets/js/icons.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

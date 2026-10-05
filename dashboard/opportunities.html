@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opportunities - Loopy</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <main class="dashboard">
+    <nav class="dash-nav shell">
+      <a href="../landing/index.html" class="brand">
+        <img src="../assets/images/loopy.png" alt="Loopy" class="brand-logo">
+      </a>
+      <div class="dash-links" id="dash-links">
+        <a href="index.html">Overview</a>
+        <a href="counselors.html">Counselors</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a href="universities.html">Universities</a>
+        <button id="saved-btn">Saved <span class="nav-count">0</span></button>
+      </div>
+      <div class="nav-profile">
+        <button class="icon-button mobile-menu" id="mobile-menu" aria-label="Menu"><span id="menu-icon"></span></button>
+        <button class="profile-button">
+          <span>ST</span>
+          <small>Student<br><b>View account</b></small>
+        </button>
+      </div>
+    </nav>
+
+    <section class="dash-hero shell">
+      <div class="welcome">
+        <p class="eyebrow">Build your story</p>
+        <h1>Real experience, real impact.</h1>
+        <p>Volunteering, internships and programs that strengthen your profile and skills.</p>
+      </div>
+    </section>
+
+    <section class="opportunity-section" style="padding-top: 50px; background: var(--paper);">
+      <div class="shell">
+        <div class="section-heading">
+          <div><p class="eyebrow">Recommended for you</p><h2>Volunteering programs</h2></div>
+        </div>
+        <div class="opportunity-grid">
+          <article>
+            <div class="opportunity-top"><span>01</span><small>Environment</small></div>
+            <div><p>OceanKind Europe</p><h3>Coastal Changemakers</h3><span class="meta"><span id="calendar-icon-1"></span>Lisbon · 2 weeks · July</span></div>
+            <button><span>View details</span><span id="arrow-icon-1"></span></button>
+          </article>
+          <article>
+            <div class="opportunity-top"><span>02</span><small>Education</small></div>
+            <div><p>Bright Futures</p><h3>Read Together</h3><span class="meta"><span id="calendar-icon-2"></span>Remote · 4 hrs/week</span></div>
+            <button><span>View details</span><span id="arrow-icon-2"></span></button>
+          </article>
+          <article>
+            <div class="opportunity-top"><span>03</span><small>Community</small></div>
+            <div><p>Neighbourhood Lab</p><h3>City Food Network</h3><span class="meta"><span id="calendar-icon-3"></span>Local · Saturdays</span></div>
+            <button><span>View details</span><span id="arrow-icon-3"></span></button>
+          </article>
+          <article>
+            <div class="opportunity-top"><span>04</span><small>Health</small></div>
+            <div><p>Global Health Initiative</p><h3>Community Care Project</h3><span class="meta"><span id="calendar-icon-4"></span>Kenya · 3 weeks · August</span></div>
+            <button><span>View details</span><span id="arrow-icon-4"></span></button>
+          </article>
+          <article>
+            <div class="opportunity-top"><span>05</span><small>Technology</small></div>
+            <div><p>Code for Good</p><h3>Youth Tech Mentorship</h3><span class="meta"><span id="calendar-icon-5"></span>Online · 6 weeks</span></div>
+            <button><span>View details</span><span id="arrow-icon-5"></span></button>
+          </article>
+          <article>
+            <div class="opportunity-top"><span>06</span><small>Arts</small></div>
+            <div><p>Creative Commons</p><h3>Arts Access Program</h3><span class="meta"><span id="calendar-icon-6"></span>Berlin · 4 weeks · June</span></div>
+            <button><span>View details</span><span id="arrow-icon-6"></span></button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="opportunity-section" style="background: var(--mist);">
+      <div class="shell">
+        <div class="section-heading">
+          <div><p class="eyebrow">Gain real-world skills</p><h2>Student internships</h2></div>
+        </div>
+        <div class="opportunity-grid">
+          <article>
+            <div class="opportunity-top"><span>01</span><small>Technology</small></div>
+            <div><p>TechStart Inc.</p><h3>Software Development Intern</h3><span class="meta"><span id="calendar-icon-7"></span>Remote · 10 weeks · Summer</span></div>
+            <button><span>View details</span><span id="arrow-icon-7"></span></button>
+          </article>
+          <article>
+            <div class="opportunity-top"><span>02</span><small>Business</small></div>
+            <div><p>Global Ventures</p><h3>Marketing Analyst</h3><span class="meta"><span id="calendar-icon-8"></span>London · 8 weeks</span></div>
+            <button><span>View details</span><span id="arrow-icon-8"></span></button>
+          </article>
+          <article>
+            <div class="opportunity-top"><span>03</span><small>Research</small></div>
+            <div><p>Innovation Lab</p><h3>Research Assistant</h3><span class="meta"><span id="calendar-icon-9"></span>Boston · 12 weeks</span></div>
+            <button><span>View details</span><span id="arrow-icon-9"></span></button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="shell">
+        <a href="../landing/index.html" class="brand brand-light">
+          <img src="../assets/images/loopy.png" alt="Loopy" class="brand-logo">
+        </a>
+        <p>Your future is yours. Loopy helps untangle the way.</p>
+        <span>© 2026 Loopy</span>
+      </div>
+    </footer>
+  </main>
+
+  <button class="help-button" id="help-button" aria-label="Help">
+    <img src="../assets/images/loopy.png" alt="Help">
+  </button>
+  <div class="help-menu" id="help-menu">
+    <a href="pricing.html"><span id="help-pricing-icon"></span>View pricing plans</a>
+    <button onclick="showContactModal()"><span id="help-contact-icon"></span>Contact support</button>
+    <button onclick="showTourModal()"><span id="help-tour-icon"></span>Take a tour</button>
+  </div>
+
+  <script src="../assets/js/icons.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
